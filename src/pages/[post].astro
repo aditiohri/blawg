@@ -8,7 +8,7 @@ export async function getStaticPaths({ rssFn }) {
 	const markdownFiles = await Astro.glob('../content/**/*.md');
 	const posts = published( markdownFiles );
 	
-	rssFn(getRSS(markdownFiles));
+	// rssFn(rss(markdownFiles));
 
 	return posts.map((post) => {
 		return {
@@ -44,6 +44,9 @@ const { post: { Content }, post } = Astro.props;
 			</div>
 			<div>
 				<Content />
+			</div>
+			<div>
+				<ul id="tags">{post.tags.map(tag => <li>{tag}</li>)}</ul>
 			</div>
 		</div>
 	</div>

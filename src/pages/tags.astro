@@ -1,0 +1,16 @@
+---
+import { extractTags, published } from "@data/post"
+import Blog from "@layouts/blog";
+// import Preview from "@components/blog/preview";
+// page that lists all tags used in blog
+const markdownFiles = await Astro.glob('../content/**/*.md')
+const posts = published( markdownFiles );
+const tags = extractTags(posts);
+// next step - https://github.com/adwinmbd/astro-blog-template/blob/main/src/pages/tags/index.astro
+---
+
+<Blog>
+	<div>
+		<ul id="tags">{tags.map(tag => <a href={tag}><li>{tag}</li></a>)}</ul>
+	</div>
+</Blog>

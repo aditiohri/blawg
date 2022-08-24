@@ -12,6 +12,7 @@ export type Post = {
 	date: string,
 	file: URL,
 	img: URL,
+	tags: string[]
 }
 
 export function single(post: MarkdownInstance): Post {
@@ -31,6 +32,19 @@ export function published(posts: MarkdownInstance[]): Post[] {
 		.map(post => single(post))
 		.filter(post => MODE === 'development' || !post.draft)
 		.sort((a, b) => b.timestamp - a.timestamp)
+}
+
+export function tagged(posts: Post[], tag: string): Post[] {
+	return posts
+		.filter(post => post.tags.includes(tag))
+}
+
+export function extractTags(posts: Post[]): Array<string> {
+	let tags: Set<string> = new Set();
+	posts.forEach(post => {
+		post.tags?.forEach(tag => tags.add(tag))
+	})
+	return Array.from(tags)
 }
 
 export function getRSS(posts: MarkdownInstance[]) {
