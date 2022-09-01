@@ -1,5 +1,18 @@
 # Daisy Blog
 
+## TO DO 
+* show tags in previews
+* add title page to tag section / maybe to all posts?
+* move tags to their own folder / type file etc
+* add tags to menu
+* pagination
+* search feature for tags / posts
+
+[another blog reference](https://github.com/adwinmbd/astro-blog-template/blob/main/src/pages/tags/index.astro)
+
+
+-------------------------
+
 Simple blog template with Astro, Tailwind CSS, daisyUI
 
 [![](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/saadeghi/daisy-blog)

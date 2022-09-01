@@ -34,9 +34,9 @@ export function published(posts: MarkdownInstance[]): Post[] {
 		.sort((a, b) => b.timestamp - a.timestamp)
 }
 
-export function tagged(posts: Post[], tag: string): Post[] {
+export function tagged(posts: Array<Post>, tag: string): Post[] {
 	return posts
-		.filter(post => post.tags.includes(tag))
+		.filter(post => post.tags?.includes(tag))
 }
 
 export function extractTags(posts: Post[]): Array<string> {

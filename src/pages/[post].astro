@@ -46,7 +46,7 @@ const { post: { Content }, post } = Astro.props;
 				<Content />
 			</div>
 			<div>
-				<ul id="tags">{post.tags.map(tag => <li>{tag}</li>)}</ul>
+				<ul id="tags">{post.tags.map(tag => <a href={tag}><li>{tag}</li></a>)}</ul>
 			</div>
 		</div>
 	</div>

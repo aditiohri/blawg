@@ -1,0 +1,31 @@
+---
+import { published, tagged, extractTags } from "@data/post"
+import Blog from "@layouts/blog";
+import Preview from "@components/blog/preview";
+
+export async function getStaticPaths() {
+    const markdownFiles = await Astro.glob('../content/**/*.md');
+	const posts = published( markdownFiles );
+    const allTags = extractTags(posts);
+    
+    return Array.from(allTags).map(((tag) => {
+            const filteredPosts = tagged(posts, tag);
+            return {
+                params: { tag },
+                props: {
+                    page: filteredPosts
+                }
+            }
+        }
+    ))
+}
+
+const { page } = Astro.props;
+const { tag } = Astro.params;
+---
+
+<Blog>
+    <div>
+        {page.map(post => <Preview post={post}/>)}
+    </div>
+</Blog>
