@@ -1,10 +1,15 @@
 # Daisy Blog
 
 ## TO DO 
-* show tags in previews
 * add title page to tag section / maybe to all posts?
+* show tags in previews
 * move tags to their own folder / type file etc
 * add tags to menu
+* update avatar with personal pic
+* customize color scheme
+* update title of blog
+* add content to about 
+* add content to contact
 * pagination
 * search feature for tags / posts
 
