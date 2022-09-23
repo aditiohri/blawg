@@ -46,7 +46,7 @@ const { post: { Content }, post } = Astro.props;
 				<Content />
 			</div>
 			<div>
-				<ul id="tags">{post.tags.map(tag => <a href={tag}><li>{tag}</li></a>)}</ul>
+				<ul id="tags" class="list-none flex flex-row justify-start gap-x-1">{post.tags.map(tag => <a href={tag}><li>#{tag}</li></a>)}</ul>
 			</div>
 		</div>
 	</div>
