@@ -25,6 +25,7 @@ const { tag } = Astro.params;
 ---
 
 <Blog>
+    <h1 class="text-3xl font-bold">#{tag} - tagged posts</h1>
     <div>
         {page.map(post => <Preview post={post}/>)}
     </div>

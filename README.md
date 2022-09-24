@@ -1,16 +1,14 @@
 # Daisy Blog
 
 ## TO DO 
-* add title page to tag section / maybe to all posts?
-* show tags in previews
-* move tags to their own folder / type file etc
-* add tags to menu
-* update avatar with personal pic
-* customize color scheme
-* update title of blog
 * add content to about 
 * add content to contact
+* style tags in preview
+* style tags in post
+* restore rss feed functionality
 * pagination
+* add tags index page to menu
+* style tags index page
 * search feature for tags / posts
 
 [another blog reference](https://github.com/adwinmbd/astro-blog-template/blob/main/src/pages/tags/index.astro)
