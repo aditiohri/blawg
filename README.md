@@ -1,12 +1,13 @@
 # Daisy Blog
 
 ## TO DO 
+* how do i organize assets/photos in posts?
 * add content to about 
 * add content to contact
 * style tags in preview
 * style tags in post
 * restore rss feed functionality
-* pagination
+* pagination - or infinite scroll? or a "load more" button 
 * add tags index page to menu
 * style tags index page
 * search feature for tags / posts
