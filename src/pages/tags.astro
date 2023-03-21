@@ -13,9 +13,9 @@ const tags = extractTags(posts);
     <ul id="tags">
       {
         tags.map((tag) => (
-          <a href={`/${tag}`}>
-            <li>{tag} test</li>
-          </a>
+          <li>
+            <a href={`/${tag}`}>#{tag}</a>
+          </li>
         ))
       }
     </ul>

@@ -1,53 +1,81 @@
 ---
 import Blog from "@layouts/blog";
 import Date from "@components/utilities/Date";
-import { published } from "@data/post"
-import rss from "@astrojs/rss"
+import { published } from "@data/post";
+import rss from "@astrojs/rss";
 
 export async function getStaticPaths({ rssFn }) {
-	const markdownFiles = await Astro.glob('../content/**/*.md');
-	const posts = published( markdownFiles );
-	
-	// rssFn(rss(markdownFiles));
+  const markdownFiles = await Astro.glob("../content/**/*.md");
+  const posts = published(markdownFiles);
 
-	return posts.map((post) => {
-		return {
-			params: { post: post.slug },
-			props: { post }
-		};
-	})
+  // rssFn(rss(markdownFiles));
+
+  return posts.map((post) => {
+    return {
+      params: { post: post.slug },
+      props: { post },
+    };
+  });
 }
 
 // Destructure to get both `Astro.props.post` and `Astro.props.post.Content`
-const { post: { Content }, post } = Astro.props;
+const {
+  post: { Content },
+  post,
+} = Astro.props;
 ---
+
 <Blog title={post.title} desc={post.desc} img={post.img ? post.img : null}>
-	<div class="flex justify-center">
-		<div class="py-6 prose lg:prose-lg">
-			{post.img && post.imgWidth && post.imgHeight ?
-				<figure class="flex justify-center">
-					<img src={post.img} alt={post.title} width={post.imgWidth} height={post.imgHeight} class="rounded bg-base-200" />
-				</figure>
-				: post.img &&
-				<figure class="flex justify-center">
-					<img src={post.img} alt={post.title} class="rounded bg-base-200" />
-				</figure>
-			}
-			<h1>{post.title}</h1>
-			<div class="flex gap-3">
-				<span class="badge badge-ghost">
-					<Date date={post.date}/>
-				</span>
-				{post.author &&
-					<span class="text-sm text-base-content/70">By {post.author}</span>
-				}
-			</div>
-			<div>
-				<Content />
-			</div>
-			<div>
-				<ul id="tags" class="list-none flex flex-row justify-start gap-x-1">{post.tags.map(tag => <a href={tag}><li>#{tag}</li></a>)}</ul>
-			</div>
-		</div>
-	</div>
+  <div class="flex justify-center">
+    <div class="py-6 prose lg:prose-lg">
+      {
+        post.img && post.imgWidth && post.imgHeight ? (
+          <figure class="flex justify-center">
+            <img
+              src={post.img}
+              alt={post.title}
+              width={post.imgWidth}
+              height={post.imgHeight}
+              class="rounded bg-base-200"
+            />
+          </figure>
+        ) : (
+          post.img && (
+            <figure class="flex justify-center">
+              <img
+                src={post.img}
+                alt={post.title}
+                class="rounded bg-base-200"
+              />
+            </figure>
+          )
+        )
+      }
+      <h1>{post.title}</h1>
+      <div class="flex gap-3">
+        <span class="badge badge-ghost">
+          <Date date={post.date} />
+        </span>
+        {
+          post.author && (
+            <span class="text-sm text-base-content/70">By {post.author}</span>
+          )
+        }
+      </div>
+      <div>
+        <Content />
+      </div>
+      <div>
+        <ul id="tags" class="list-none flex flex-row justify-start gap-x-1">
+          {
+            post.tags.map((tag) => (
+              <li>
+                <a href={tag}>#{tag}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
 </Blog>
