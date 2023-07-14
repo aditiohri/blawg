@@ -206,19 +206,21 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
-"sample-draft-post.md": {
-	id: "sample-draft-post.md";
-  slug: "sample-draft-post";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
 "top-10-furniture-design-trends-for-2022.md": {
 	id: "top-10-furniture-design-trends-for-2022.md";
   slug: "top-10-furniture-design-trends-for-2022";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+};
+"drafts": {
+"sample-draft-post.md": {
+	id: "sample-draft-post.md";
+  slug: "sample-draft-post";
+  body: string;
+  collection: "drafts";
+  data: any
 } & { render(): Render[".md"] };
 };
 
