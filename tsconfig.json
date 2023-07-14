@@ -1,5 +1,6 @@
 {
 	"compilerOptions": {
+		"strictNullChecks": true,
 		"moduleResolution": "node",
 		"module": "ES2022",
 		"target": "es2022",

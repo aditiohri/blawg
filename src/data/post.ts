@@ -3,6 +3,7 @@ type MarkdownInstance = import('astro').MarkdownInstance<any>;
 const { MODE } = import.meta.env;
 
 export type Post = {
+	isDraft: boolean,
 	title: string,
 	slug: string,
 	desc: string,

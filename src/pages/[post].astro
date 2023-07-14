@@ -68,7 +68,7 @@ const {
       <div>
         <ul id="tags" class="list-none flex flex-row justify-start gap-x-1">
           {
-            post.tags.map((tag) => (
+            post.tags?.map((tag) => (
               <li>
                 <a href={`/${tag}`}>#{tag}</a>
               </li>
