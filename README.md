@@ -2,6 +2,10 @@
 
 ## TO DO 
 * update favicon
+* how does draft collection work in astro?
+
+* ask michael for help getting initial thoughts on vite exploration/choice together?
+
 * how do i organize local assets/photos in posts?
 * add content to about 
 * add content to contact
