@@ -199,16 +199,9 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blog": {
-"i-baught-a-chair-and-here-s-what-i-learned.md": {
-	id: "i-baught-a-chair-and-here-s-what-i-learned.md";
-  slug: "i-baught-a-chair-and-here-s-what-i-learned";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"top-10-furniture-design-trends-for-2022.md": {
-	id: "top-10-furniture-design-trends-for-2022.md";
-  slug: "top-10-furniture-design-trends-for-2022";
+"vite-for-the-win.md": {
+	id: "vite-for-the-win.md";
+  slug: "vite-for-the-win";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
