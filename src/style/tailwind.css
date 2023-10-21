@@ -6,3 +6,12 @@
   border-radius: var(--rounded-box);
   padding: 1rem;
 }
+
+p + figcaption {
+  margin-top: 0rem !important;
+}
+
+p > img,
+p:has(img) {
+  margin-bottom: 0rem !important;
+}
